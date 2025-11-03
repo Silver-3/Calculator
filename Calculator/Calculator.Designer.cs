@@ -173,6 +173,7 @@
             NegativeButton.TabIndex = 9;
             NegativeButton.Text = "+/-";
             NegativeButton.UseVisualStyleBackColor = true;
+            NegativeButton.MouseClick += NegativeButton_Clicked;
             // 
             // SuperscriptTwoSqureRootButton
             // 

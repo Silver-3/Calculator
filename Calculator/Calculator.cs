@@ -57,5 +57,12 @@ namespace Calculator
         {
             OutputTextBox.Text = "0";
         }
+
+        private void NegativeButton_Clicked(object sender, EventArgs e)
+        {
+            if (OutputTextBox.Text.EndsWith("-")) OutputTextBox.Text = OutputTextBox.Text.Remove(OutputTextBox.Text.Length - 1);
+            else if (!OutputTextBox.Text.EndsWith(" ")) return;
+            else OutputTextBox.Text += "-";
+        }
     }
 }
