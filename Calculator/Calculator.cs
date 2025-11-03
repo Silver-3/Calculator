@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Calculator
 {
@@ -16,11 +17,13 @@ namespace Calculator
 
             if (OutputTextBox.Text.EndsWith(" ")) return;
 
-            string expression = OutputTextBox.Text;
-            if (expression.Contains('x')) expression = expression.Replace('x', '*');
-            if (expression.Contains('÷')) expression = expression.Replace('÷', '/');
+            string equation = OutputTextBox.Text;
+            if (equation.Contains('x')) equation = equation.Replace('x', '*');
+            if (equation.Contains('÷')) equation = equation.Replace('÷', '/');
 
-            var result = new DataTable().Compute(expression, null);
+            equation = Regex.Replace(equation, @"(\d+)²", "($1*$1)");
+
+            var result = new DataTable().Compute(equation, null);
             OutputTextBox.Text = result.ToString();
         }
 
@@ -28,7 +31,8 @@ namespace Calculator
         {
             Button button = (Button)sender;
 
-            if (OutputTextBox.Text == "0" && button.Text != ".") OutputTextBox.Text = $" {button.Text}";
+            if (OutputTextBox.Text.EndsWith("²")) return;
+            else if (OutputTextBox.Text == "0" && button.Text != ".") OutputTextBox.Text = $" {button.Text}";
             else if (OutputTextBox.Text.EndsWith(" ") && button.Text == ".") OutputTextBox.Text += "0.";
             else OutputTextBox.Text += button.Text;
         }
@@ -63,6 +67,12 @@ namespace Calculator
             if (OutputTextBox.Text.EndsWith("-")) OutputTextBox.Text = OutputTextBox.Text.Remove(OutputTextBox.Text.Length - 1);
             else if (!OutputTextBox.Text.EndsWith(" ")) return;
             else OutputTextBox.Text += "-";
+        }
+
+        private void SquaredButton_Clicked(object sender, EventArgs e)
+        {
+            if (OutputTextBox.Text.EndsWith(" ") || OutputTextBox.Text.EndsWith("-")) return;
+            OutputTextBox.Text += "²";
         }
     }
 }

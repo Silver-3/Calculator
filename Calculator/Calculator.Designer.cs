@@ -40,7 +40,7 @@
             PeriodButton = new Button();
             ZeroButton = new Button();
             NegativeButton = new Button();
-            SuperscriptTwoSqureRootButton = new Button();
+            SquareRootButton = new Button();
             SquaredButton = new Button();
             OneFractionOverButton = new Button();
             CButton = new Button();
@@ -175,14 +175,14 @@
             NegativeButton.UseVisualStyleBackColor = true;
             NegativeButton.MouseClick += NegativeButton_Clicked;
             // 
-            // SuperscriptTwoSqureRootButton
+            // SquareRootButton
             // 
-            SuperscriptTwoSqureRootButton.Location = new Point(386, 180);
-            SuperscriptTwoSqureRootButton.Name = "SuperscriptTwoSqureRootButton";
-            SuperscriptTwoSqureRootButton.Size = new Size(75, 23);
-            SuperscriptTwoSqureRootButton.TabIndex = 17;
-            SuperscriptTwoSqureRootButton.Text = "²√x";
-            SuperscriptTwoSqureRootButton.UseVisualStyleBackColor = true;
+            SquareRootButton.Location = new Point(386, 180);
+            SquareRootButton.Name = "SquareRootButton";
+            SquareRootButton.Size = new Size(75, 23);
+            SquareRootButton.TabIndex = 17;
+            SquareRootButton.Text = "²√x";
+            SquareRootButton.UseVisualStyleBackColor = true;
             // 
             // SquaredButton
             // 
@@ -192,6 +192,7 @@
             SquaredButton.TabIndex = 16;
             SquaredButton.Text = "x²";
             SquaredButton.UseVisualStyleBackColor = true;
+            SquaredButton.MouseClick += SquaredButton_Clicked;
             // 
             // OneFractionOverButton
             // 
@@ -294,11 +295,11 @@
             // 
             OutputTextBox.Location = new Point(224, 109);
             OutputTextBox.Name = "OutputTextBox";
+            OutputTextBox.ReadOnly = true;
             OutputTextBox.Size = new Size(318, 23);
             OutputTextBox.TabIndex = 24;
             OutputTextBox.Text = "0";
             OutputTextBox.TextAlign = HorizontalAlignment.Right;
-            OutputTextBox.ReadOnly = true;
             // 
             // Calculator
             // 
@@ -312,7 +313,7 @@
             Controls.Add(PlusButton);
             Controls.Add(MinusButton);
             Controls.Add(TimesButton);
-            Controls.Add(SuperscriptTwoSqureRootButton);
+            Controls.Add(SquareRootButton);
             Controls.Add(SquaredButton);
             Controls.Add(OneFractionOverButton);
             Controls.Add(CButton);
@@ -350,7 +351,7 @@
         private Button PeriodButton;
         private Button ZeroButton;
         private Button NegativeButton;
-        private Button SuperscriptTwoSqureRootButton;
+        private Button SquareRootButton;
         private Button SquaredButton;
         private Button OneFractionOverButton;
         private Button CButton;
