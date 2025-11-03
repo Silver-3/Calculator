@@ -28,9 +28,9 @@ namespace Calculator
         {
             Button button = (Button)sender;
 
-            if (OutputTextBox.Text == "0") OutputTextBox.Text = "";
-
-            OutputTextBox.Text += button.Text;
+            if (OutputTextBox.Text == "0" && button.Text != ".") OutputTextBox.Text = $" {button.Text}";
+            else if (OutputTextBox.Text.EndsWith(" ") && button.Text == ".") OutputTextBox.Text += "0.";
+            else OutputTextBox.Text += button.Text;
         }
 
         private void OperationButton_Clicked(object sender, EventArgs e)

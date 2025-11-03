@@ -153,6 +153,7 @@
             PeriodButton.TabIndex = 11;
             PeriodButton.Text = ".";
             PeriodButton.UseVisualStyleBackColor = true;
+            PeriodButton.MouseClick += NumberButton_Clicked;
             // 
             // ZeroButton
             // 
