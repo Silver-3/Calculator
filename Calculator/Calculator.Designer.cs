@@ -202,6 +202,7 @@
             OneFractionOverButton.TabIndex = 15;
             OneFractionOverButton.Text = "⅟x";
             OneFractionOverButton.UseVisualStyleBackColor = true;
+            OneFractionOverButton.MouseClick += OneFractionOverButton_Clicked;
             // 
             // CButton
             // 
@@ -221,6 +222,7 @@
             CEButton.TabIndex = 13;
             CEButton.Text = "CE";
             CEButton.UseVisualStyleBackColor = true;
+            CButton.MouseClick += CButton_Clicked;
             // 
             // PercentButton
             // 
@@ -230,6 +232,7 @@
             PercentButton.TabIndex = 12;
             PercentButton.Text = "%";
             PercentButton.UseVisualStyleBackColor = true;
+            PercentButton.MouseClick += PercentButton_Clicked;
             // 
             // DevideButton
             // 
